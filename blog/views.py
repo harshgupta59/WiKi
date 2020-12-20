@@ -17,22 +17,11 @@ class RandomPostListView(ListView):
     model = Post.objects.order_by('?').first()
     template_name="blog/random.html"#<app>/<model>_<view_type>.html
     context_object_name='posts'
-    
+
     def get_queryset(self):
         return random.sample(list(Post.objects.all()),2)
         
-'''
-class SearchView(ListView):
-    model=Post
-    template_name = 'blog/search.html'
-    context_object_name='posts'
-    paginate_by = 5
 
-    def get_queryset(self):
-        query = self.kwargs.get('q', '')
-        object_list = self.model.objects.all()
-        return Post.objects.filter(title__icontains=query).order_by('-date_posted')
-'''
 class UserPostListView(ListView):
     model = Post
     template_name="blog/user_posts.html"#<app>/<model>_<view_type>.html
@@ -98,3 +87,20 @@ def SearchView(request):
         "posts":queryset
     })
 
+
+
+
+
+
+'''
+class SearchView(ListView):
+    model=Post
+    template_name = 'blog/search.html'
+    context_object_name='posts'
+    paginate_by = 5
+
+    def get_queryset(self):
+        query = self.kwargs.get('q', '')
+        object_list = self.model.objects.all()
+        return Post.objects.filter(title__icontains=query).order_by('-date_posted')
+'''
