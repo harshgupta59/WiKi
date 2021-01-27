@@ -8,11 +8,16 @@
             <div class="media-body">
             <div class="article-metadata">
                 <a class="mr-2" href="{% url 'user-posts' post.author.username %}">{{ post.author }}</a>
-                <small class="text-muted">{{ post.date_posted|date:"F d, Y" }}</small>
+                <small class="text-muted">{{ post.date_posted }}</small>
             </div>
-            <h2><a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h2>
+            <h2><a class="article-title " href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h2>
+            {% if post.content|make_list|length > 15 %}
             <p class="article-content">{{ post.content|safe|truncatewords:"80"|linebreaks }}</p>
             <a class="btn btn-dark" href="{% url 'post-detail' post.id %}">read more</a>
+            {% else %}
+            <p class="article-content">{{ post.content }}</p>
+            {% endif %}
+            
             </div>
         </article>
     {% endfor %}

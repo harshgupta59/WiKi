@@ -106,6 +106,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
 
+
 LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'Asia/Kolkata'
@@ -122,10 +123,25 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+import socket
+socket.getaddrinfo('127.0.0.1', 8000)
+
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 LOGIN_REDIRECT_URL = 'blog-home'
-LOGIN_URL='login'
+LOGIN_URL ='login'
+
+#this is added for forgot password
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS =True
+
+ #Add your gmail-id(should be 2-step Authenticated for security) here to act as admin id which sends password reset link to users of WIKI.
+EMAIL_HOST_USER = 'Admin gmail-id'
+#enter your gmail-app password here
+EMAIL_HOST_PASSWORD = 'Admin gmail-id app password' 
+
