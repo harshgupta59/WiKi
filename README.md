@@ -10,12 +10,10 @@
 ### 3.set terminal directory to django_project folder directory.
 
 ### 4.type following in terminal 
-	 python manage.py makemigrations 
-	<br/>
+	python manage.py makemigrations 
 	python manage.py migrate
-	<br/>
 	python manage.py runserver 
-	<br/>
+
 	
 ### 5.open the localhost in any webbrowser.
 
