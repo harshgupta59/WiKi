@@ -10,7 +10,7 @@
 ### 3.set terminal directory to django_project folder directory.
 
 ### 4.type following in terminal <br/>
-	> python manage.py makemigrations 
+	 python manage.py makemigrations 
 	<br/>
 	> python manage.py migrate
 	<br/>
