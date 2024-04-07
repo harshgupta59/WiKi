@@ -1,7 +1,7 @@
 # WiKi
 
 ## About
-• Created a comprehensive blog web application enabling users to perform CRUD operations on posts, along with search functionality, and featuring a sidebar showcasing random posts.
+• Created a comprehensive blog web application enabling users to perform CRUD operations on posts, along with search functionality, and featuring a sidebar showcasing random posts.\
 • Implemented user authentication functionalities including login, logout, registration, password reset, and profile management features such as updating username and profile picture with image compression capabilities
 
 ## Steps for running the application
